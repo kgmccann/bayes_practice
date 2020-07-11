@@ -30,3 +30,4 @@ sum(update_prior(c(1,0),P))
 plot(names(first_ob),update_prior(N,P),col='red',xlab='Proportion')
 sum(update_prior(N,P))
 
+which(update_prior(N,P)==max(update_prior(N,P))) # 0.68
