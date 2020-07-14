@@ -1,6 +1,8 @@
 
 f <- function(x) factorial(x)
 liklihood <- function(w,l,p){
+  #'binomial liklihood (slower than dbinom)
+  #'wins, losses, probabilities
   (f(w+l)/(f(w)*f(l)))*p**w*(1-p)**l
 }
 update_prior <- function(new,prior){
@@ -30,4 +32,4 @@ sum(update_prior(c(1,0),P))
 plot(names(first_ob),update_prior(N,P),col='red',xlab='Proportion')
 sum(update_prior(N,P))
 
-which(update_prior(N,P)==max(update_prior(N,P))) # 0.68
+names(which(update_prior(N,P)==max(update_prior(N,P)))) # 0.68
